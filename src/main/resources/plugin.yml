@@ -1,0 +1,11 @@
+name: MissioneSettimanale
+version: 1.0
+main: me.jickjacks.missionesettimanale.MissioneSettimanale
+api-version: 1.20
+commands:
+  settimanale:
+    description: Gestisce il comando settimanale
+    usage: /settimanale
+  settimanale_cambia:
+    description: Gestisce il comando settimanale
+    usage: /settimanale_cambia
