@@ -9,3 +9,6 @@ commands:
   settimanale_cambia:
     description: Gestisce il comando settimanale
     usage: /settimanale_cambia
+  missioni_gui:
+    description: Gestisce il comando settimanale
+    usage: /missioni_gui

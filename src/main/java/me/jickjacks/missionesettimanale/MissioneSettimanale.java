@@ -10,6 +10,10 @@ public class MissioneSettimanale extends JavaPlugin {
         ComandoSettimanale comandoSettimanale = new ComandoSettimanale(this);
         getCommand("settimanale").setExecutor(comandoSettimanale);
         getCommand("settimanale_cambia").setExecutor(comandoSettimanale);
+
+        GUIMissioni guiMissioni = new GUIMissioni(this);
+        getCommand("missioni_gui").setExecutor(guiMissioni);
+        getServer().getPluginManager().registerEvents(guiMissioni, this);
     }
 
     @Override
