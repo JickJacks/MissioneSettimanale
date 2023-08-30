@@ -43,7 +43,7 @@ public class ComandoSettimanale implements CommandExecutor {
 
                     saveCoordinates(playerName, x, y, z, worldName);
 
-                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[Missione Settimanale] " + ChatColor.GREEN + "Coordinate salvate!");
+                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[Missione Settimanale] " + ChatColor.GREEN + "Coordinate Missione Settimanale Salvate!");
                 }
 
                 return true;
