@@ -12,3 +12,6 @@ commands:
   missioni_gui:
     description: Gestisce il comando settimanale
     usage: /missioni_gui
+  missionesettimanale_reset:
+    description: Resetta il file config
+    usage: /missionesettimanale_reset

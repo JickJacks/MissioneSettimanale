@@ -14,6 +14,9 @@ public class MissioneSettimanale extends JavaPlugin {
         GUIMissioni guiMissioni = new GUIMissioni(this);
         getCommand("missioni_gui").setExecutor(guiMissioni);
         getServer().getPluginManager().registerEvents(guiMissioni, this);
+
+        ComandoReset comandoReset = new ComandoReset(this);
+        getCommand("missionesettimanale_reset").setExecutor(comandoReset);
     }
 
     @Override
