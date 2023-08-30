@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 
 public class ComandoReset implements CommandExecutor {
 
@@ -19,8 +20,16 @@ public class ComandoReset implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("missionesettimanale_reset")) {
+            if (sender instanceof Player) {
+                Player player = (Player) sender;
+                if (!player.hasPermission("missionesettimanale.reset")) {
+                    player.sendMessage(ChatColor.RED + "Non hai il permesso per utilizzare questo comando.");
+                    return true;
+                }
+            }
+
             resetConfig();
-            sender.sendMessage(ChatColor.AQUA + "[Missione Settimanale] " + ChatColor.GREEN + "Il file di configurazione è stato resettato.");
+            sender.sendMessage(ChatColor.AQUA + "[Missione Settimanale] " + ChatColor.GREEN + "Coordinate Missioni Settimanali Resettate.");
             return true;
         }
         return false;

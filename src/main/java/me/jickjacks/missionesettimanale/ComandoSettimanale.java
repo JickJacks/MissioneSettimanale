@@ -31,7 +31,7 @@ public class ComandoSettimanale implements CommandExecutor {
 
                 if (hasCoordinates(playerName)) {
                     // Chiedi la conferma per la sostituzione delle coordinate
-                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[ Missione Settimanale ] " + ChatColor.RED + "Hai già settato le coordinate, vuoi sostituirle? Digita " + ChatColor.ITALIC + "/settimanale_cambia" + ChatColor.RESET + ChatColor.RED + " per confermare.");
+                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[Missione Settimanale] " + ChatColor.RED + "Hai già settato le coordinate, vuoi sostituirle? Digita " + ChatColor.GREEN + ChatColor.ITALIC + "/settimanale_cambia" + ChatColor.RESET + ChatColor.RED + " per confermare.");
                     setWaitingForConfirmation(playerName, true);
                 } else {
                     // Coordinate non presenti, procedi con il salvataggio
@@ -43,7 +43,7 @@ public class ComandoSettimanale implements CommandExecutor {
 
                     saveCoordinates(playerName, x, y, z, worldName);
 
-                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[ Missione Settimanale ] " + ChatColor.GREEN + "Coordinate salvate!");
+                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[Missione Settimanale] " + ChatColor.GREEN + "Coordinate salvate!");
                 }
 
                 return true;
@@ -64,9 +64,9 @@ public class ComandoSettimanale implements CommandExecutor {
                     saveCoordinates(playerName, x, y, z, worldName);
                     setWaitingForConfirmation(playerName, false);
 
-                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[ Missione Settimanale ] " + ChatColor.GREEN + "Coordinate cambiate!");
+                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[Missione Settimanale] " + ChatColor.GREEN + "Coordinate cambiate!");
                 } else {
-                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[ Missione Settimanale ] " + ChatColor.RED + "Non hai una conferma in sospeso per cambiare le coordinate.");
+                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[Missione Settimanale] " + ChatColor.RED + "Non hai una conferma in sospeso per cambiare le coordinate.");
                 }
 
                 return true;

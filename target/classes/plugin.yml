@@ -9,9 +9,9 @@ commands:
   settimanale_cambia:
     description: Gestisce il comando settimanale
     usage: /settimanale_cambia
-  missioni_gui:
+  missionesettimanale_gui:
     description: Gestisce il comando settimanale
-    usage: /missioni_gui
+    usage: /missionesettimanale_gui
   missionesettimanale_reset:
     description: Resetta il file config
     usage: /missionesettimanale_reset

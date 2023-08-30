@@ -25,15 +25,19 @@ public class GUIMissioni implements CommandExecutor, Listener {
 
     public GUIMissioni(JavaPlugin plugin) {
         this.plugin = plugin;
-        plugin.getCommand("missioni_gui").setExecutor(this);
+        plugin.getCommand("missionesettimanale_gui").setExecutor(this);
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (command.getName().equalsIgnoreCase("missioni_gui") && sender instanceof Player) {
+        if (command.getName().equalsIgnoreCase("missionesettimanale_gui") && sender instanceof Player) {
             Player player = (Player) sender;
-            openMissioniGUI(player);
+            if (player.hasPermission("missionesettimanale.gui")) {
+                openMissioniGUI(player);
+            } else {
+                player.sendMessage("Non hai il permesso per utilizzare questo comando.");
+            }
             return true;
         }
         return false;

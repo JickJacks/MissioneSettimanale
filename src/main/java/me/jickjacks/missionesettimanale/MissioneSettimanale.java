@@ -12,7 +12,7 @@ public class MissioneSettimanale extends JavaPlugin {
         getCommand("settimanale_cambia").setExecutor(comandoSettimanale);
 
         GUIMissioni guiMissioni = new GUIMissioni(this);
-        getCommand("missioni_gui").setExecutor(guiMissioni);
+        getCommand("missionesettimanale_gui").setExecutor(guiMissioni);
         getServer().getPluginManager().registerEvents(guiMissioni, this);
 
         ComandoReset comandoReset = new ComandoReset(this);
