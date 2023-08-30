@@ -6,11 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-
-import java.io.File;
-import java.io.IOException;
 
 public class ComandoSettimanale implements CommandExecutor {
 
@@ -28,13 +25,17 @@ public class ComandoSettimanale implements CommandExecutor {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 String playerName = player.getName();
+                World world = player.getWorld();
+
+                if (!world.getName().equalsIgnoreCase("Eris")) {
+                    player.sendMessage(ChatColor.RED + "Non puoi eseguire questo comando qui!");
+                    return true;
+                }
 
                 if (hasCoordinates(playerName)) {
-                    // Chiedi la conferma per la sostituzione delle coordinate
                     player.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "[Missione Settimanale] " + ChatColor.RED + "Hai già settato le coordinate, vuoi sostituirle? Digita " + ChatColor.GREEN + ChatColor.ITALIC + "/settimanale_cambia" + ChatColor.RESET + ChatColor.RED + " per confermare.");
                     setWaitingForConfirmation(playerName, true);
                 } else {
-                    // Coordinate non presenti, procedi con il salvataggio
                     Location playerLocation = player.getLocation();
                     double x = playerLocation.getX();
                     double y = playerLocation.getY();
